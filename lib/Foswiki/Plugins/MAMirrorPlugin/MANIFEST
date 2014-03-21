@@ -1,0 +1,7 @@
+!noci
+data/System/MAMirrorPlugin.txt 0644 Documentation page
+data/Extensions/FastReport.txt 0644
+data/Extensions/ManageMirror.txt 0644
+lib/Foswiki/Plugins/MAMirrorPlugin.pm 0444 Perl module
+lib/Foswiki/Plugins/MAMirrorPlugin/Config.spec 0444 Configuration
+tools/MAMirrorGetPlugins.sh

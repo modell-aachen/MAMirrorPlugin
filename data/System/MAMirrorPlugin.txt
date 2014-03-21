@@ -1,0 +1,49 @@
+%META:TOPICPARENT{name="Plugins"}%
+<!--
+One line description, required for extensions repository catalog.
+   * Set SHORTDESCRIPTION = Manage a local mirror for extensions.
+-->
+---+!! MAMirror Plugin
+
+%SHORTDESCRIPTION%
+
+---++ Usage
+---+++ Using the local mirror
+In =configure= set ={ExtensionsRepositories}= (expert option) to =localmirror=(%SCRIPTURL{view}%/Extensions/, %PUBURL%/Extensions/)=
+Modify the link accordingly if you have changed the location of your ExtensionsWeb.
+
+---+++ Manually adding a new plugin
+Create the topic-description (eg. =MyPlugin=) in =ExtensionsWeb= and attach the .tgz (eg. =MyPlugin.tgz=) and installer script (eg. =MyPlugin_installer=)
+
+---+++ Uploading a bunch of new plugins
+Put all plugins in a plugins.tar, attach it to the topic you have specified in ={Extensions}{MAMirrorPlugin}{ManageMirrorTopic}= (by default [[Extensions.ManageMirror]]) and press the button there.
+
+---+++ Changing the location of ManageMirror
+You can set the location in =configure= under the option ={Extensions}{MAMirrorPlugin}{ManageMirrorTopic}=. Enter the full topic there (eg. =MyWeb.ManageMyMirror=, the default is =Extensions.ManageMirror=). The destination should have a button like this:
+<verbatim>
+%BUTTON{"Update" href="%SCRIPTURL{rest}%/MAMirrorPlugin/update"}%
+</verbatim>
+Or press it right here:%CLEAR%
+%BUTTON{"Update" href="%SCRIPTURL{rest}%/MAMirrorPlugin/update"}%%CLEAR%
+
+---+++ Changing the ExtensionsWeb
+You can set the web for your extensions in =configure= under the option ={Extensions}{MAMirrorPlugin}{ExtensionsWeb}=. The default is =Extensions=.
+
+---+++ Getting plugins from ModellAachen rms
+Create a temporary directory and execute =tools/MAMirrorGetPlugins.sh=. You will be prompted for credentials.
+
+---++ Installation
+%$INSTALL_INSTRUCTIONS%
+
+---++ Info
+
+|  Author: | Foswiki:Main.PluginAuthor |
+|  Copyright: | &copy; 2012, Foswiki Contributors |
+|  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
+|  Release: | %$RELEASE% |
+|  Version: | %$VERSION% |
+|  Change&nbsp;History: | <!-- versions below in reverse order -->&nbsp; |
+|  1.0.0 (XX Mmm 20XX): | Initial version |
+|  Home: | http://foswiki.org/Extensions/%TOPIC% |
+|  Support: | http://foswiki.org/Support/%TOPIC% |
+

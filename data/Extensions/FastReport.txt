@@ -1,0 +1,24 @@
+<noautolink>
+Topic designed for use with the Extension installer. It generates a specially formatted table which is parsed by the
+extension finder, when retrieved with =?skin=text&contenttype=text/plain=. The table is a list of extensions specifications.
+<pre>
+<!-- Do not remove the extra $n from the search format. It is needed for 1.0.7. See Task2137 -->
+
+---
+%SEARCH{ 
+"attachments[name~'*_installer']"
+type="query"
+web="Extensions"
+nosearch="on"
+nototal="on"
+format="{ topic: $topic
+ description: $pattern(.*?\*\sSet\sSHORTDESCRIPTION\s\=([^\n\r]*).*)
+ compatibility: $formfield(Compatibility)
+ classification: $formfield(ExtensionClassification)
+ version:$pattern(.*?\n\|[\s\w-]*\s[Vv]ersion:\s*\|([^|]*)\|.*)
+ release:$pattern(.*?\n\|[\s\w-]*\s[Rr]elease:\s*\|([^|]*)\|.*)
+ image: $formfield(ImageUrl)
+ }$n"
+}%
+</pre>
+</noautolink>

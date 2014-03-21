@@ -1,0 +1,6 @@
+---++ Manage Mirror
+
+Attach the archives for the plugins to this topic and press the button.
+
+%IF{"not context MAMirrorPluginEnabled" then="$percentRED$percent<b>Please activate =MAMirrorPlugin= in =configure=</b>$percentENDCOLOR$percent<br />"}%
+%BUTTON{"Update" href="%SCRIPTURL{rest}%/MAMirrorPlugin/update"}%
